@@ -78,7 +78,7 @@ public class Tower : MonoBehaviour
             float maxHeight = 0;
             foreach (List<TowerTile> floor in tilesByFloor) {
                 foreach (TowerTile t in floor) {
-                    if (t != null)
+                    if (t.gameObject.activeSelf)
                         maxHeight = Mathf.Max(t.transform.position.y, maxHeight);
                 }
             }
