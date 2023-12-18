@@ -132,7 +132,7 @@ public class GameManager : Singleton<GameManager>
         tower.StartGame();
     }
 
-    //Called during the win animation
+    //Called during the win/lose animation
     public void CleanUp()
     {
         tower.ResetTower();
