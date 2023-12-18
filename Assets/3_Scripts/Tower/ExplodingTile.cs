@@ -18,7 +18,8 @@ public class ExplodingTile : TowerTile
         base.Awake();
         collider = GetComponent<Collider>();
     }
-    protected override void OnDestroy()
+    
+    protected override void OnRecicled()
     {
         if (CameraShakeManager.Instance)
             CameraShakeManager.Instance.Play(1);

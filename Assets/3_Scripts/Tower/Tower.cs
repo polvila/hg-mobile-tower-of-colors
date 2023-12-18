@@ -48,7 +48,12 @@ public class Tower : MonoBehaviour
             for (int i = 0; i < TileCountPerFloor; i++) {
                 Quaternion direction = Quaternion.AngleAxis(angleStep * i, Vector3.up) * floorRotation;
                 Vector3 position = transform.position + Vector3.up * y * TileHeight + direction * Vector3.forward * towerRadius;
-                TowerTile tileInstance = Instantiate(Random.value > SpecialTileChance ? TilePrefab : SpecialTilePrefabs[Random.Range(0, SpecialTilePrefabs.Length)], position, direction * TilePrefab.transform.rotation, transform);
+                TowerTile tileInstance = ComponentPool<TowerTile>.Instance.GetPooled(
+                    Random.value > SpecialTileChance ? 
+                        TilePrefab : 
+                        SpecialTilePrefabs[Random.Range(0, SpecialTilePrefabs.Length)],
+                    position, 
+                    direction * TilePrefab.transform.rotation);
                 tileInstance.SetColorIndex(Mathf.FloorToInt(Random.value * TileColorManager.Instance.ColorCount));
                 tileInstance.SetFreezed(true);
                 tileInstance.Floor = y;
@@ -92,7 +97,7 @@ public class Tower : MonoBehaviour
             foreach (List<TowerTile> tileList in tilesByFloor) {
                 foreach (TowerTile tile in tileList) {
                     if (Application.isPlaying)
-                        Destroy(tile.gameObject);
+                        tile.Recycle();
                     else
                         DestroyImmediate(tile.gameObject);
                 }

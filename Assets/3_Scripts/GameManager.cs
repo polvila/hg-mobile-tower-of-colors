@@ -42,6 +42,10 @@ public class GameManager : Singleton<GameManager>
     ParticleSystem tileDestroyFx;
     [SerializeField]
     ParticleSystem tileExplosionFx;
+    [SerializeField] 
+    TowerTile towerTile;
+    [SerializeField] 
+    ExplodingTile explodingTile;
 
     Animator animator;
 
@@ -56,8 +60,10 @@ public class GameManager : Singleton<GameManager>
         Application.targetFrameRate = 60;
         animator = GetComponent<Animator>();
         animator.speed = 1.0f / Time.timeScale;
-        FxPool.Instance.EnsureQuantity(tileExplosionFx, 3);
-        FxPool.Instance.EnsureQuantity(tileDestroyFx, 30);
+        ComponentPool<ParticleSystem>.Instance.EnsureQuantity(tileExplosionFx, 3);
+        ComponentPool<ParticleSystem>.Instance.EnsureQuantity(tileDestroyFx, 30);
+        ComponentPool<TowerTile>.Instance.EnsureQuantity(towerTile, 202);
+        ComponentPool<TowerTile>.Instance.EnsureQuantity(explodingTile, 23);
     }
 
     private void Start()
@@ -124,6 +130,12 @@ public class GameManager : Singleton<GameManager>
     {
         SetGameState(GameState.Playing);
         tower.StartGame();
+    }
+
+    //Called during the win animation
+    public void CleanUp()
+    {
+        tower.ResetTower();
     }
 
 }

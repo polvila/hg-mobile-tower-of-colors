@@ -38,7 +38,7 @@ public class TowerTile : MonoBehaviour
         TileColorManager.Instance.OnColorListChanged += ResetColor;
     }
 
-    protected virtual void OnDestroy()
+    protected virtual void OnRecicled()
     {
         if (CameraShakeManager.Instance)
             CameraShakeManager.Instance.Play(0);
@@ -116,6 +116,18 @@ public class TowerTile : MonoBehaviour
         else
             SetColor(TileColorManager.Instance.GetDisabledColor());
     }
+    
+    public void Recycle()
+    {
+        gameObject.SetActive(false);
+        Active = false;
+        connectedTiles.Clear();
+        nextCheckTime = 0;
+        drifting = false;
+        initialized = false;
+        freezed = false;
+        OnRecicled();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -149,11 +161,11 @@ public class TowerTile : MonoBehaviour
             connectedTiles[i]?.Explode(false);
         }
         OnTileDestroyed?.Invoke(this);
-        ParticleSystem fx = FxPool.Instance.GetPooled(explosionFx, transform.position, Quaternion.identity);
+        ParticleSystem fx = ComponentPool<ParticleSystem>.Instance.GetPooled(explosionFx, transform.position, Quaternion.identity);
         if (colorizeFx) {
             ParticleSystem.MainModule main = fx.main;
             main.startColor = TileColorManager.Instance.GetColor(ColorIndex);
         }
-        Destroy(gameObject);
+        Recycle();
     }
 }
