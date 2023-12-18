@@ -62,8 +62,8 @@ public class GameManager : Singleton<GameManager>
         animator.speed = 1.0f / Time.timeScale;
         ComponentPool<ParticleSystem>.Instance.EnsureQuantity(tileExplosionFx, 3);
         ComponentPool<ParticleSystem>.Instance.EnsureQuantity(tileDestroyFx, 30);
-        ComponentPool<TowerTile>.Instance.EnsureQuantity(towerTile, 202);
-        ComponentPool<TowerTile>.Instance.EnsureQuantity(explodingTile, 23);
+        ComponentPool<TowerTile>.Instance.EnsureQuantity(towerTile, 225);
+        ComponentPool<TowerTile>.Instance.EnsureQuantity(explodingTile, 10);
     }
 
     private void Start()
