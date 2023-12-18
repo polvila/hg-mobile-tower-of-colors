@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,17 +34,21 @@ public class TowerTile : MonoBehaviour
     private bool initialized;
     private bool freezed;
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         TileColorManager.Instance.OnColorListChanged += ResetColor;
     }
 
-    protected virtual void OnRecicled()
+    protected virtual void OnDisable()
+    {
+        if (TileColorManager.Instance)
+            TileColorManager.Instance.OnColorListChanged -= ResetColor;
+    }
+
+    protected virtual void OnRecycled()
     {
         if (CameraShakeManager.Instance)
             CameraShakeManager.Instance.Play(0);
-        if (TileColorManager.Instance)
-            TileColorManager.Instance.OnColorListChanged -= ResetColor;
     }
 
     private void FixedUpdate()
@@ -127,7 +132,7 @@ public class TowerTile : MonoBehaviour
         initialized = false;
         freezed = false;
         OnTileDestroyed = null;
-        OnRecicled();
+        OnRecycled();
     }
 
     private void OnTriggerEnter(Collider other)

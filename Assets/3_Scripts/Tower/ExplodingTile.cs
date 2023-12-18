@@ -13,18 +13,15 @@ public class ExplodingTile : TowerTile
 
     new Collider collider;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         collider = GetComponent<Collider>();
     }
     
-    protected override void OnRecicled()
+    protected override void OnRecycled()
     {
         if (CameraShakeManager.Instance)
             CameraShakeManager.Instance.Play(1);
-        if (TileColorManager.Instance)
-            TileColorManager.Instance.OnColorListChanged -= ResetColor;
     }
 
     public override void SetColor(Color color)
