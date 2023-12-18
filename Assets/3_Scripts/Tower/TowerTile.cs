@@ -126,6 +126,7 @@ public class TowerTile : MonoBehaviour
         drifting = false;
         initialized = false;
         freezed = false;
+        OnTileDestroyed = null;
         OnRecicled();
     }
 
