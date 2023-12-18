@@ -94,8 +94,10 @@ public class PercentCounter : MonoBehaviour
         }
         if (value >= 1) {
             fullPercentImage.gameObject.SetActive(true);
+            nextLevelText.enabled = false;
         } else if (fullPercentImage.gameObject.activeSelf) {
             fullPercentImage.gameObject.SetActive(false);
+            nextLevelText.enabled = true;
         }
 
         animateRoutine = null;

@@ -59,6 +59,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1881d50d27ba1e84280ec37f3675c0af, type: 3}
   - {fileID: 21300000, guid: 8eff7f7ddab8e044495d9ef57d8e388c, type: 3}
   - {fileID: 21300000, guid: 61ecdded871dc5c4b9de3ce27684988f, type: 3}
+  - {fileID: 21300000, guid: dc02858ecc70b2d4c8be690396aaeebb, type: 3}
   m_PackedSpriteNamesToIndex:
   - slider-border
   - eye-open
@@ -69,6 +70,7 @@ SpriteAtlas:
   - smartphone
   - slider-fill
   - fill-circle
+  - 2x2_UI_Texture
   m_RenderDataMap: {}
   m_Tag: UI
   m_IsVariant: 0
