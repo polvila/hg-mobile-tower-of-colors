@@ -58,6 +58,7 @@ public class TowerTile : MonoBehaviour
                 nextCheckTime = Time.time + raycastCheckInterval;
                 if (!Physics.Raycast(rigidbody.worldCenterOfMass, Vector3.down, rigidbody.worldCenterOfMass.y + 1, 1 << 9)) {
                     Active = false;
+                    EventSystemService.Instance.Dispatch(new BarrelFallenEvent());
                     OnTileDestroyed?.Invoke(this);
                 }
             }
@@ -172,6 +173,7 @@ public class TowerTile : MonoBehaviour
             ParticleSystem.MainModule main = fx.main;
             main.startColor = TileColorManager.Instance.GetColor(ColorIndex);
         }
+        EventSystemService.Instance.Dispatch(new BarrelExplodedEvent());
         Recycle();
     }
 }

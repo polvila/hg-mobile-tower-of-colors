@@ -42,4 +42,14 @@ public static class SaveData
             PlayerPrefs.SetInt("VibrationEnabled", value);
         }
     }
+
+    public static MissionsSavedData MissionsSavedData
+    {
+        get {
+            return JsonUtility.FromJson<MissionsSavedData>(PlayerPrefs.GetString("MissionsSavedData", "{}"));
+        }
+        set {
+            PlayerPrefs.SetString("MissionsSavedData", JsonUtility.ToJson(value));
+        }
+    }
 }

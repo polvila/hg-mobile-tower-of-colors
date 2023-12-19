@@ -92,6 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         ballCount--;
         ballCountText.text = ballCount.ToString("N0");
+        EventSystemService.Instance.Dispatch(new BallShotEvent());
         if (ballCount == 1) {
             oneBallRemaining.Play();
         }
@@ -120,6 +121,7 @@ public class GameManager : Singleton<GameManager>
                 SaveData.CurrentLevel++;
                 SaveData.PreviousHighscore = 0;
                 SetGameState(GameState.Win);
+                EventSystemService.Instance.Dispatch(new LevelCompletedEvent());
                 if (SaveData.VibrationEnabled == 1)
                     Handheld.Vibrate();
             }
@@ -130,11 +132,13 @@ public class GameManager : Singleton<GameManager>
     {
         SetGameState(GameState.Playing);
         tower.StartGame();
+        EventSystemService.Instance.Dispatch(new LevelStartedEvent());
     }
 
     //Called during the win/lose animation
     public void CleanUp()
     {
+        MissionsManager.Instance.ReleaseMissions();
         tower.ResetTower();
     }
 

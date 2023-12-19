@@ -31,7 +31,7 @@ public class Tower : MonoBehaviour
         }
     }
 
-    public float CaculateTowerRadius(float sideLength, float sideCount)
+    public float CalculateTowerRadius(float sideLength, float sideCount)
     {
         return sideLength / (2 * Mathf.Sin(Mathf.Deg2Rad * (180.0f / sideCount)));
     }
@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
     {
         ResetTower();
         tilesByFloor = new List<List<TowerTile>>();
-        float towerRadius = CaculateTowerRadius(TileRadius * 2, TileCountPerFloor);
+        float towerRadius = CalculateTowerRadius(TileRadius * 2, TileCountPerFloor);
         float angleStep = 360.0f / TileCountPerFloor;
         Quaternion floorRotation = transform.rotation;
         for (int y = 0; y < FloorCount; y++) {
