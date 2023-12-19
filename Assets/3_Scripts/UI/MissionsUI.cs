@@ -19,6 +19,7 @@ public class MissionsUI : MonoBehaviour
 			missionElement.SetDescription(activeMission.MissionConfiguration.Description);
 			missionElement.SetProgression(activeMission.PrintProgression());
 			missionElement.SetProgressionBar(activeMission.CurrentProgression, activeMission.MaxProgression);
+			missionElement.SetBackground(activeMission.IsCompleted());
 
 			foreach (var reward in activeMission.MissionConfiguration.Rewards)
 			{

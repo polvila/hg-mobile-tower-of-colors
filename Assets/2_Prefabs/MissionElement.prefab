@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 7614280093760695555}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.893135, y: -19.2}
-  m_SizeDelta: {x: 36.0603, y: 12.4708}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -72.606865, y: -19.2}
+  m_SizeDelta: {x: 36.060303, y: 12.470795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7311154401998073861
 CanvasRenderer:
@@ -169,10 +169,10 @@ RectTransform:
   m_Father: {fileID: 7614280093760695555}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135.64, y: -16.678}
-  m_SizeDelta: {x: 28.723, y: 17.5148}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -32.86, y: -16.678001}
+  m_SizeDelta: {x: 28.722992, y: 17.514801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6410288858720586130
 CanvasRenderer:
@@ -305,10 +305,10 @@ RectTransform:
   m_Father: {fileID: 7614280093760695555}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.323425, y: -49.3}
-  m_SizeDelta: {x: 60.9197, y: 24.3602}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -60.176575, y: -49.300003}
+  m_SizeDelta: {x: 60.91971, y: 24.360199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7878340193296185550
 CanvasRenderer:
@@ -677,6 +677,9 @@ MonoBehaviour:
   _coinsText: {fileID: 175164868537201405}
   _diamondsLabel: {fileID: 4607300522239242567}
   _diamondsText: {fileID: 5817181655774702018}
+  _background: {fileID: 7614280093760695580}
+  _inProgressColor: {r: 1, g: 1, b: 1, a: 1}
+  _completedColor: {r: 0.5235849, g: 1, b: 0.60021496, a: 1}
 --- !u!1 &7614280093826358036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,10 +1138,10 @@ RectTransform:
   m_Father: {fileID: 7614280093760695555}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.4, y: -41.2}
-  m_SizeDelta: {x: 13.3796, y: 18.2354}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -19.100006, y: -41.199997}
+  m_SizeDelta: {x: 13.379578, y: 18.235397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2338839794983712615
 CanvasRenderer:

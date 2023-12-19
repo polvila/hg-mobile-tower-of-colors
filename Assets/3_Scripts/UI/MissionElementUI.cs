@@ -18,6 +18,12 @@ public class MissionElementUI : MonoBehaviour
 	private GameObject _diamondsLabel;
 	[SerializeField]
 	private TMP_Text _diamondsText;
+	[SerializeField] 
+	private Image _background;
+	[SerializeField] 
+	private Color _inProgressColor;
+	[SerializeField] 
+	private Color _completedColor;
 
 	private void OnEnable()
 	{
@@ -56,5 +62,10 @@ public class MissionElementUI : MonoBehaviour
 		_diamondsText.SetText(amount.ToString());
 		_diamondsLabel.SetActive(true);
 		_diamondsText.gameObject.SetActive(true);
+	}
+
+	public void SetBackground(bool isCompleted)
+	{
+		_background.color = isCompleted ? _completedColor : _inProgressColor;
 	}
 }
