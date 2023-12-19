@@ -25,7 +25,6 @@ public class MissionsManager : Singleton<MissionsManager>
 		if (!LoadMissions())
 		{
 			SetupNewRandomActiveMissions();
-			SaveMissions();
 		}
 
 		InitMissions();
@@ -91,17 +90,26 @@ public class MissionsManager : Singleton<MissionsManager>
 			var mission = _missionFactory.Create(_missionConfigurations[randomIndex[i]]);
 			_activeMissions[i] = mission;
 		}
+		SaveMissions();
 	}
 
 	private void InitMissions()
 	{
+		var allMissionsCompleted = true;
 		for (var i = 0; i < _activeMissionsAmount; ++i)
 		{
 			var mission = _activeMissions[i];
 			if (!mission.IsCompleted())
 			{
 				mission.Init();
+				allMissionsCompleted = false;
 			}
+		}
+
+		if (allMissionsCompleted)
+		{
+			SetupNewRandomActiveMissions();
+			InitMissions();
 		}
 	}
 }
