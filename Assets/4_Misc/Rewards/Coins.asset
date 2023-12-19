@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb81abb03f541f292f6e22acdc61544, type: 3}
-  m_Name: Complete3LevelsConfiguration
+  m_Script: {fileID: 11500000, guid: 6d2e85a7c67746b7bc20e7804015893c, type: 3}
+  m_Name: Coins
   m_EditorClassIdentifier: 
-  _description: Complete 3 levels
-  _rewards:
-  - _amount: 15
-    _rewardId: {fileID: 11400000, guid: 8c8b711e0a1262f46ad2dac0d794c5df, type: 2}
-  _levelsAmount: 3
+  _value: coins
