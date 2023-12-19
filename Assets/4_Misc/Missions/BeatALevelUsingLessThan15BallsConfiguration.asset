@@ -18,4 +18,5 @@ MonoBehaviour:
     _rewardId: {fileID: 11400000, guid: 8c8b711e0a1262f46ad2dac0d794c5df, type: 2}
   - _amount: 2
     _rewardId: {fileID: 11400000, guid: f0a7cc7e751294343bddcb026f740289, type: 2}
+  _difficultyType: {fileID: 11400000, guid: a4456a4440b8eea40b43e8e6b6f1de33, type: 2}
   _ballsAmount: 15

@@ -16,4 +16,5 @@ MonoBehaviour:
   _rewards:
   - _amount: 15
     _rewardId: {fileID: 11400000, guid: 8c8b711e0a1262f46ad2dac0d794c5df, type: 2}
+  _difficultyType: {fileID: 11400000, guid: 5037d761551bbb740a303140bf710473, type: 2}
   _levelsAmount: 3

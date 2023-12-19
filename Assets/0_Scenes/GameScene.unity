@@ -9325,6 +9325,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93903a68b60d3a244bb9472eb52af166, type: 2}
   - {fileID: 11400000, guid: a9960207eccc6db468399ce0216abd7c, type: 2}
   - {fileID: 11400000, guid: f08fe930d3e730642a1229d676671866, type: 2}
+  - {fileID: 11400000, guid: 77d5ec0036c25f1468df2382becd8625, type: 2}
   _activeMissionsAmount: 3
 --- !u!4 &762679642
 Transform:

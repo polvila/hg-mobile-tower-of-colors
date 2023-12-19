@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9754a19fc74c7fa02b7498549ac4e8, type: 3}
-  m_Name: Play5GamesConfiguration
+  m_Script: {fileID: 11500000, guid: de85b947e8e94a5880be00b35b04e40b, type: 3}
+  m_Name: Explode50BarrelsConfiguration
   m_EditorClassIdentifier: 
-  _description: Play 5 games
+  _description: Explode 50 blocks
   _rewards:
-  - _amount: 5
-    _rewardId: {fileID: 11400000, guid: f0a7cc7e751294343bddcb026f740289, type: 2}
-  - _amount: 30
+  - _amount: 20
     _rewardId: {fileID: 11400000, guid: 8c8b711e0a1262f46ad2dac0d794c5df, type: 2}
-  _difficultyType: {fileID: 11400000, guid: e4bdbf95a02a21c4d91858a1176479be, type: 2}
-  _gamesAmount: 5
+  _difficultyType: {fileID: 11400000, guid: 5037d761551bbb740a303140bf710473, type: 2}
+  _barrelsAmount: 50
+  _singleBall: 0

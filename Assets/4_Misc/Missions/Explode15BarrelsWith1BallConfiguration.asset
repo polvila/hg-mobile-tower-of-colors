@@ -16,5 +16,6 @@ MonoBehaviour:
   _rewards:
   - _amount: 3
     _rewardId: {fileID: 11400000, guid: f0a7cc7e751294343bddcb026f740289, type: 2}
+  _difficultyType: {fileID: 11400000, guid: a4456a4440b8eea40b43e8e6b6f1de33, type: 2}
   _barrelsAmount: 15
   _singleBall: 1

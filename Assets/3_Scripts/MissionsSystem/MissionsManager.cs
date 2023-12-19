@@ -4,8 +4,11 @@ using Random = UnityEngine.Random;
 
 public class MissionsManager : Singleton<MissionsManager>
 {
-	[SerializeField] private MissionConfiguration[] _missionConfigurations;
-	[SerializeField] private int _activeMissionsAmount;
+	[SerializeField] 
+	private MissionConfiguration[] _missionConfigurations;
+	[SerializeField] 
+	private int _activeMissionsAmount;
+	
 
 	private MissionFactory _missionFactory;
 	private Mission[] _activeMissions;
@@ -84,11 +87,15 @@ public class MissionsManager : Singleton<MissionsManager>
 
 	private void SetupNewRandomActiveMissions()
 	{
-		var randomIndex = Enumerable.Range(0, _missionConfigurations.Length).OrderBy(x => Random.value).ToList();
+		var randomizedConfigurationsGrouped = _missionConfigurations
+			.OrderBy(x => Random.Range(0f, 1f))
+			.GroupBy(x => x.DifficultyType)
+			.OrderBy(x => x.Key.Value)
+			.ToList();
+		
 		for (var i = 0; i < _activeMissionsAmount; ++i)
 		{
-			var mission = _missionFactory.Create(_missionConfigurations[randomIndex[i]]);
-			_activeMissions[i] = mission;
+			_activeMissions[i] = _missionFactory.Create(randomizedConfigurationsGrouped[i].FirstOrDefault());
 		}
 		SaveMissions();
 	}

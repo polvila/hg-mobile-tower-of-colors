@@ -17,10 +17,12 @@ public class MissionConfiguration : ScriptableObject
 {
 	[SerializeField] 
 	private string _description;
-
 	[SerializeField] 
 	private RewardAmount[] _rewards;
+	[SerializeField] 
+	private DifficultyType _difficultyType;
 
 	public string Description => _description;
 	public RewardAmount[] Rewards => _rewards;
+	public DifficultyType DifficultyType => _difficultyType;
 }
