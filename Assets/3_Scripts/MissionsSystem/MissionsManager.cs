@@ -14,6 +14,11 @@ public class MissionsManager : Singleton<MissionsManager>
 
 	private void Awake()
 	{
+		if (!RemoteConfig.MISSIONS_ENABLED)
+		{
+			return;
+		}
+		
 		_missionFactory = new MissionFactory();
 		_activeMissions = new Mission[_activeMissionsAmount];
 		
@@ -28,6 +33,11 @@ public class MissionsManager : Singleton<MissionsManager>
 
 	public void ReleaseMissions()
 	{
+		if (!RemoteConfig.MISSIONS_ENABLED)
+		{
+			return;
+		}
+		
 		foreach (var activeMission in _activeMissions)
 		{
 			activeMission.Release();
